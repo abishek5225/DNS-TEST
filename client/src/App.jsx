@@ -1,33 +1,26 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import React from 'react';
 
+
+const quotes= [
+  "If you are god, why is there suffering for you?",
+  "This business eating, sleeping, sex life and defending this is also the animals business and you are doing the same.But the advantage of human body is you can realize god",
+
+]
 function App() {
-  const [count, setCount] = useState(0)
+  const[quote, setquote]= useState(quotes[0]);
+  const handlequote=()=>{
+    setquote(quotes[1])
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='flex item-center'>
+        {quote}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <button onClick={handlequote} className='bg-gray-500 px-4 py-2 rounded-full mt-12 text-white'>Click here</button>
     </>
   )
 }
